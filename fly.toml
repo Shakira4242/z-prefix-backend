@@ -1,8 +1,5 @@
-app = "z-prefix-backend"
+app = "zprefix-api-4242"
 primary_region = "sjc"
-
-[build]
-  builder = "heroku/buildpacks:20"
 
 [env]
   PORT = "8080"
@@ -10,15 +7,3 @@ primary_region = "sjc"
 [http_service]
   internal_port = 8080
   force_https = true
-
-[[services]]
-  internal_port = 8080
-  protocol = "tcp"
-
-  [[services.ports]]
-    port = 80
-    handlers = ["http"]
-
-  [[services.ports]]
-    port = 443
-    handlers = ["tls", "http"]
